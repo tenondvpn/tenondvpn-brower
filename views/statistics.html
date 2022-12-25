@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Tenon block explorer</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="/adminlet/components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/adminlet/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/adminlet/components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/adminlet/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/adminlet/dist/css/skins/_all-skins.min.css">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue layout-top-nav">
+    <div class="wrapper">
+        <header class="main-header">
+            <nav class="navbar navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <div class="pull-left image">
+                            <img src="./images/logo.png" style="width: 170px;height: 40px;margin-top: -2px;margin-right: -5px;" alt="User Image">
+                        </div>
+                        <a href="/" class="navbar-brand"></a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/block_server">主页 </a></li>
+                            <li><a href="/transaction">交易 </a></li>
+                            <li class="active"><a href="/statistics">统计<span class="sr-only">(current)</span></a></li>
+                            <li><a href="/best_addr">最佳账户</a></li>
+                            <li><a href="javascript:void(0);" data-toggle="modal" data-target="#modal-default">转账</a></li>
+                            <li><a href="/api">开发API</a></li>
+                        </ul>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="navbar-search-input" style="width:350px;" placeholder="交易hash，块hash...">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="hidden-xs">账户信息</span>
+                                </a>
+                                <ul class="dropdown-menu" style="width: 600px;">
+                                    <li class="user-header" style="height: 120px;background-color:#ffffff">
+                                        <form class="form-horizontal">
+                                            <div class="box-body">
+                                                <div class="form-group">
+                                                    <label for="inputPassword3" class="col-sm-2 control-label">私钥</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="user_private_key" placeholder="私钥">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="margin-top:-25px">
+                                                    <label for="inputEmail3" class="col-sm-2 control-label">账号</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="user_account_address" placeholder="账号地址">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </li>
+                                    <li class="user-body">
+                                        <div class="row">
+                                            <div class="col-xs-4 text-center">
+                                                <a href="javascript:void(0);" id="user_balance">账户余额</a>
+                                            </div>
+                                            <div class="col-xs-4 text-center">
+                                                <a href="avascript:void(0);" id="user_tx_out">转出笔数</a>
+                                            </div>
+                                            <div class="col-xs-4 text-center">
+                                                <a href="avascript:void(0);" id="user_tx_in">转入笔数</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="user-footer">
+                                        <div class="box-body">
+                                            <button type="button" class="btn btn-default btn-block" onclick="create_account_address(true);">新建账号</button>
+                                            <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-default">转账交易</button>
+                                            <button type="button" class="btn btn-default btn-block btn-flat" onclick="go_to_self_trans_list();">交易历史</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="modal fade" id="modal-default">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">转账交易</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="box box-info">
+                            <form class="form-horizontal">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">目的账户</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="to_account_address" placeholder="Transfer To Account">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">金额</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="to_amount" placeholder="Amount">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">GID</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="text" disabled="disabled" class="form-control" id="transfer_tx_gid" placeholder="Transaction Id">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-block btn-flat" onclick="transaction()">发送Tenon</button>
+                        <button type="button" class="btn btn-default btn-block btn-flat" onclick="random_transaction()">随机发送</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="container">
+                <section class="content-header">
+                    <h1>
+                        Tenon /
+                        <small>统计</small>
+                    </h1>
+                </section>
+            </div>
+
+            <div class="wrapper" style="background-color:#efefef">
+                <div class="row">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-10">
+
+                        <div class="row" id="user_search_tongji_info" style="display:block;margin-top:20px">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-gray"><i class="fa fa-money"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">交易总额</span>
+                                        <span class="info-box-number" id="statis_all_amount">13,648</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-gray"><i class="fa fa-key"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">交易笔数</span>
+                                        <span class="info-box-number" id="statis_all_tx_count">1,410</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="user_search_tongji_info" style="display:block;margin-top:20px">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-gray"><i class="fa fa-exchange"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">账户数</span>
+                                        <span class="info-box-number" id="statis_addr_count">410</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-gray"><i class="fa fa-terminal"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">TPS</span>
+                                        <span class="info-box-number" id="statis_tps">93,139</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="box box-tools">
+                                    <div class="box-header with-border">
+                                        <h3 class="box-title">24小时交易总额</h3>
+
+                                        <div class="box-tools pull-right">
+                                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="chart">
+                                            <canvas id="lineChart" style="height: 250px; width: 594px;" height="312" width="742"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box box-tools">
+                                    <div class="box-header with-border">
+                                        <h3 class="box-title">24小时交易量</h3>
+
+                                        <div class="box-tools pull-right">
+                                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="chart">
+                                            <canvas id="lineChart2" style="height: 250px; width: 594px;" height="312" width="742"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="box box-tools">
+                                    <div class="box-header with-border">
+                                        <h3 class="box-title">TPS</h3>
+
+                                        <div class="box-tools pull-right">
+                                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="chart">
+                                            <canvas id="lineChart3" style="height: 250px; width: 594px;" height="312" width="742"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box box-tools">
+                                    <div class="box-header with-border">
+                                        <h3 class="box-title">新建账户地址</h3>
+
+                                        <div class="box-tools pull-right">
+                                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="chart">
+                                            <canvas id="lineChart4" style="height: 250px; width: 594px;" height="312" width="742"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="box box-tools">
+                                    <div class="box-header with-border">
+                                        <h3 class="box-title">30天活跃用户</h3>
+
+                                        <div class="box-tools pull-right">
+                                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="chart">
+                                            <canvas id="lineChart5" style="height: 250px; width: 594px;" height="312" width="742"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="box box-tools">
+                                    <div class="box-header with-border">
+                                        <h3 class="box-title">国家地区分布</h3>
+                                        <div class="form-group">
+                                            <select class="form-control select2 pull-right" style="width: 30%;" id="select_days" onchange="InitCountryLoad(this.options[this.options.selectedIndex].value)">
+                                                <option selected="selected" value="1">今天</option>
+                                                <option value="100">昨天</option>
+                                                <option value="4">3天</option>
+                                                <option value="8">一周</option>
+                                                <option value="31">一月</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="box-tools pull-right">
+                                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="chart">
+                                            <canvas id="barChart" style="height:230px"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="main-footer">
+            <div class="container">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> 1.0.1
+                </div>
+                <strong>Copyright &copy; 2018-2019 <a href="javascript:void(0);">Tenon</a>.</strong> All rights reserved.
+            </div>
+        </footer>
+        <script src="/adminlet/components/jquery/dist/jquery.min.js"></script>
+        <script src="/adminlet/components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/adminlet/components/chart.js/Chart.js"></script>
+        <script src="/adminlet/components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="/adminlet/components/fastclick/lib/fastclick.js"></script>
+        <script src="/adminlet/components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+        <script src="/adminlet/dist/js/adminlte.min.js"></script>
+        <script src="/adminlet/dist/js/demo.js"></script>
+        <script src="/javascripts/bundle.js"></script>
+        <script src="/javascripts/statistic.js"></script>
+
+</body>
+</html>

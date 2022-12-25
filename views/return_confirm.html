@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Tenon Pay</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="/adminlet/components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/adminlet/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/adminlet/components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/adminlet/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/adminlet/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue layout-top-nav">
+    <input type="hidden" id="account_id" value="<%= id %>">
+    <input type="hidden" id="tocken" value="<%= token %>">
+    <input type="hidden" id="payerid" value="<%= payerid %>">
+    <input type="hidden" id="vip_type" value="<%= vip_type %>">
+    <input type="hidden" id="vip_days" value="<%= vip_days %>">
+    <input type="hidden" id="vip_off" value="<%= vip_off %>">
+    <input type="hidden" id="vip_money" value="<%= vip_money %>">
+
+    <div class="wrapper" style="background-color:#ecf0f5">
+        <div class="content-wrapper">
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="box box-warning box-solid" id="start_step" style="display:block">
+                            <div class="box-header">
+                                <h3 class="box-title">
+                                    Paypal Success
+                                </h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span class="info-box-text">Success!</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.1
+            </div>
+            <strong>Copyright &copy; 2018-2021 <a href="javascript:void(0);">TenonVPN</a>.</strong> All rights reserved.
+        </div>
+    </footer>
+   
+</body>
+
+</html>

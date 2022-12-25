@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+        Tenon - Decentralized VPN
+    </title>
+    <meta name="description" content="Lantern delivers fast, reliable and secure access to the open internet. Download Lantern for free access to blocked videos, news, social media and more. Available for Windows, Android, Mac, Ubuntu.">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" href="../en_US/index.html" hreflang="x-default">
+    <link rel="icon" sizes="124x124" href="/favicon.ico?v=2">
+    <link rel="shortcut icon" href="/favicon.ico?v=2">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/dropdown_style.css">
+    <link rel="stylesheet" href="../static/css/noJS.css">
+    <link rel="stylesheet" href="../static/js/slick/slick.css">
+    <link rel="stylesheet" href="../static/js/slick/slick-theme.css">
+    <script src="../static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+    <header class="fixed">
+        <div class="header-wrapper">
+            <h1>
+                <a href="index.html">
+                    <img src="../static/images/tenon_en.png" alt="Tenon">
+                </a>
+            </h1>
+            <div id="dd" class="select-dropdown" tabindex="1">
+                选择语言
+                <ul class="dropdown">
+                    <li>
+                        <a href="../en_US/index.html">
+                            English (United States)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../zh_CN/index.html">
+                            简体中文
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a href="/file/whitepaper.pdf/no" style="color: #333333; text-decoration: none; text-transform: uppercase; font-weight: 500;">
+                WhitePaper
+            </a>
+            <a href="/block_server" style="color: #333333; text-decoration: none; text-transform: uppercase; font-weight: 500;">
+                BlockBrowser
+            </a>
+        </div>
+    </header>
+    <section class="w100 intro-desktop" id="intro-desktop">
+        <div>
+            <h2>
+                Decentralized VPN
+            </h2>
+            <span>
+                Fast safe and reliable to take you into the decentralized world
+            </span>
+        </div>
+        <div class="intro-bg" style="padding: 0 0 0!important;">
+            <div class="bottom-info" style="padding: 3rem 0 0 0!important;">
+                <div class="feat-col" style="width:350px;height:220px;border:1px solid #E2E2E2;padding: 0 0 0!important;">
+                    <div style="margin:0 auto;padding: 0 0 0!important;margin-top:30px;">
+                        <img src="../static/images/ios.png">
+                        <h3>
+                            IOS
+                        </h3>
+                        <p>
+                            <a target="_blank" href="https://apps.apple.com/us/app/tenonvpn/id1483566411" style="font-size:18px;color: #FF4081; text-decoration: none; text-transform: uppercase; font-weight: 500;">
+                                Apple Store
+                            </a> &nbsp;| &nbsp; <a href="/file/TenonVPN.ipa/no" style="font-size:16px;color: #989898; text-decoration: none; text-transform: uppercase; font-weight: 500;">
+                                Direct
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="feat-col" style="width:350px;height:220px;border:1px solid #E2E2E2;padding: 0 0 0!important;">
+                    <div style="margin:0 auto;padding: 0 0 0!important;margin-top:30px;">
+                        <img src="../static/images/android.png">
+                        <h3>
+                            Android
+                        </h3>
+                        <p>
+                            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.vm.tenonvpn" style="font-size:16px;color: #FF4081; text-decoration: none; text-transform: uppercase; font-weight: 500;">
+                                Free
+                            </a> &nbsp;| &nbsp; <a href="/file/TenonVPN.apk/no" style="font-size:16px;color: #989898; text-decoration: none; text-transform: uppercase; font-weight: 500;">
+                                Direct
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="intro-bg" style="padding: 0 0 0!important;">
+            <div class="bottom-info" style="padding: 3rem 0 0 0!important;">
+                <div class="feat-col" style="width:350px;height:220px;border:1px solid #E2E2E2;padding: 0 0 0!important;">
+                    <div style="margin:0 auto;padding: 0 0 0!important;margin-top:30px;">
+                        <img src="../static/images/windows.png">
+                        <h3>
+                            Windows
+                        </h3>
+                        <p>
+                           <a target="_blank" href="https://github.com/tenondvpn/win10/releases/" style="font-size:18px;color: #FF4081; text-decoration: none; text-transform: uppercase; font-weight: 500;">
+                                Free Download
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="feat-col" style="width:350px;height:220px;border:1px solid #E2E2E2;padding: 0 0 0!important;">
+                    <div style="margin:0 auto;padding: 0 0 0!important;margin-top:30px;">
+                        <img src="../static/images/macos.png">
+                        <h3>
+                            Mac OS
+                        </h3>
+                        <p>
+                            <a href="/file/TenonVPN.dmg/no" style="font-size:18px;color: #FF4081; text-decoration: none; text-transform: uppercase; font-weight: 500;">
+                                Free Download
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="intro-bg" style="padding: 0 0 0!important;">
+            <div class="bottom-info" style="padding: 3rem 0 0 0!important;">
+                <div class="feat-col" style="width:350px;height:220px;border:1px solid #E2E2E2;padding: 0 0 0!important;">
+                    <div style="margin:0 auto;padding: 0 0 0!important;margin-top:30px;">
+                        <img src="../static/images/centos.png">
+                        <h3>
+                            Linux-Centos
+                        </h3>
+                        <p>
+                            <a target="_blank" href="https://github.com/tenondvpn/tenonvpn-linux" style="font-size:18px;color: #FF4081; text-decoration: none; text-transform: uppercase; font-weight: 500;">
+                                Free Download
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="feat-col" style="width:350px;height:220px;border:1px solid #E2E2E2;padding: 0 0 0!important;">
+                    <div style="margin:0 auto;padding: 0 0 0!important;margin-top:30px;">
+                        <img src="../static/images/linux.png">
+                        <h3>
+                            Linux-Other
+                        </h3>
+                        <p>
+                            <a target="_blank" href="https://github.com/tenondvpn/tenonvpn-linux" style="font-size:18px;color: #FF4081; text-decoration: none; text-transform: uppercase; font-weight: 500;">
+                                Free Download
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="width: 800px;height: 350px;margin: auto;top: 100px;left: 0;right: 0;bottom: 0;">
+        <div class="feat-col" style="width:850px;height:120px;margin-top:50px;border:0px solid #E2E2E2;float:left">
+            <img src="../static/images/decentra.png" alt="" style="float:left">
+            <h3 style="float:left;width:200px;margin-top:25px;"> Decentralized </h3>
+            <p style="float:left;width:550px;margin-top:20px;">
+                Tenon VPN is composed of a large number of decentralized nodes, because there is no centralized server, thus avoiding the authority of centralization, that is, you can access the network without any blocking.
+            </p>
+        </div>
+        <div class="feat-col" style="width:850px;height:120px;margin-top:0;border:0px solid #E2E2E2;float:left">
+            <img src="../static/images/fast.png" alt="" style="float:left">
+            <h3 style="float:left;width:200px;margin-top:25px;"> Fast </h3>
+            <p style="float:left;width:550px;margin-top:20px;">
+                Although Tenon VPN is decentralized, its performance is superior to a centralized VPN server because TenonVPN provides an original intelligent route that can find the best communication route through the user's current network conditions.
+            </p>
+        </div>
+        <div class="feat-col" style="width:850px;height:120px;margin-top:0;border:0px solid #E2E2E2;float:left">
+            <img src="../static/images/secure.png" alt="" style="float:left">
+            <h3 style="float:left;width:200px;margin-top:25px;"> Secure </h3>
+            <p style="float:left;width:550px;margin-top:20px;">
+                Tenon VPN is decentralized. All user data is encrypted by the user's private key. At the same time, the addition of the intelligent routing network ensures the client's anonymity in the entire decentralized world.
+            </p>
+        </div>
+        <div class="feat-col" style="width:850px;height:120px;margin-top:0;border:0px solid #E2E2E2;float:left">
+            <img src="../static/images/reliable.png" alt="" style="float:left">
+            <h3 style="float:left;width:200px;margin-top:25px;"> Reliable </h3>
+            <p style="float:left;width:550px;margin-top:20px;">
+                With a powerful P2P network and secure encryption technology, Tenvon VPN acts as a routing node through the user's home PC, making blocking impossible.
+            </p>
+        </div>
+        <div class="feat-col" style="width:850px;height:120px;margin-top:0;border:0px solid #E2E2E2;float:left">
+            <img src="../static/images/easy.png" alt="" style="float:left">
+            <h3 style="float:left;width:200px;margin-top:25px;"> Easy </h3>
+            <p style="float:left;width:550px;margin-top:20px;">
+                Tenon VPN is easy to use, requires no complicated configuration, and can be safely, quickly and reliably entered into the decentralized world with one-click connection.
+            </p>
+        </div>
+    </div>
+    <footer>
+        <div class="address" style="text-align:center;margin:0 auto">
+            <address style="font-size:20px;">
+                Cooperation： <a id="btn4" href="javascript:void(0);" data-clipboard-text="hltrader669@gmail.com" style="font-size:20px;">jhsx5679@gmail.com</a>
+                <div id="show4" style="display: none;">Copied</div>
+            </address>
+            <address style="font-size:20px;">
+                telegram： <a id="btn4" href="https://t.me/tenonvpn" target="_blank" data-clipboard-text="hltrader669@gmail.com" style="font-size:20px;">https://t.me/tenonvpn</a>
+            </address>
+            <address style="font-size:20px;">
+                @2019 tenonvpn.com all rights reserved
+            </address>
+        </div>
+    </footer>
+    <script src="../static/js/vendor/jquery-1.10.1.min.js"></script>
+    <script src="../static/js/vendor/platform.min.js"></script>
+    <script src="../static/js/slick/slick.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/download.js"></script>
+    <script>
+        function setCookie(name, value) {
+            var Days = 30;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+            document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+        }
+
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+
+            if (arr = document.cookie.match(reg))
+
+                return unescape(arr[2]);
+            else
+                return null;
+        }
+
+        function delCookie(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval != null)
+                document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+
+        function getQueryVariable(variable) {
+            var query = window.location.search.substr(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) { return pair[1]; }
+            }
+            return "";
+        }
+
+        var cookie_str = getCookie("tenon_vpn_cookie_name");
+        if (cookie_str == "setted") {
+        } else {
+            setCookie("tenon_vpn_cookie_name", "setted");
+            var share_id = getQueryVariable("id");
+            if (share_id != "") {
+                let req_data = { "acc_addr": share_id, "gid": "" }
+                var httpRequest = new XMLHttpRequest();
+                httpRequest.open('POST', 'https://www.tenonvpn.net/share_reward', true);
+                httpRequest.setRequestHeader("Content-type", "application/json");
+                httpRequest.send(JSON.stringify(req_data));
+            }
+        }
+    </script>
+
+</body>
+</html>
